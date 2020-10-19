@@ -1,6 +1,3 @@
-# Home-Automation
-# Code for BoltIoT
-
 <!DOCTYPE html>
 <html>
     <head>
