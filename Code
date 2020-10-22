@@ -4,26 +4,76 @@
         <title>Home Automation</title>
         <script type="text/javascript" src="https://cloud.boltiot.com/static/js/boltCommands.js"></script>
         <script>
-
         setKey('{{ApiKey}}','{{Name}}');
-
+        </script>     
+        <script type="text/javascript">
+            var count_led1 = 0;
+            var count_led2 = 0;
+            var count_fan = 0;
+            var count_plug = 0;
+            
+            function led1(btn){
+                var property = document.getElementById(btn);
+                if (count_led1%2 == 0){
+                    digitalWrite(1,"HIGH");
+                    property.style.backgroundColor = "#008000"
+                }
+                else{
+                    digitalWrite(1,"LOW");
+                    property.style.backgroundColor = "#FF0000"
+                }
+                count_led1 = count_led1+1;
+            }
+            function led2(btn){
+                var property = document.getElementById(btn);
+                if (count_led2%2 == 0){
+                    digitalWrite(2,"HIGH");
+                    property.style.backgroundColor = "#008000"
+                }
+                else{
+                    digitalWrite(2,"LOW");
+                    property.style.backgroundColor = "#FF0000"
+                }
+                count_led2 = count_led2+1;
+            }
+            function fan(btn){
+                var property = document.getElementById(btn);
+                if (count_fan%2 == 0){
+                    digitalWrite(3,"HIGH");
+                    property.style.backgroundColor = "#008000"
+                }
+                else{
+                    digitalWrite(3,"LOW");
+                    property.style.backgroundColor = "#FF0000"
+                }
+                count_fan = count_fan+1;
+            }
+            function plug(btn){
+                var property = document.getElementById(btn);
+                if (count_plug%2 == 0){
+                    digitalWrite(4,"HIGH");
+                    property.style.backgroundColor = "#008000"
+                }
+                else{
+                    digitalWrite(4,"LOW");
+                    property.style.backgroundColor = "#FF0000"
+                }
+                count_plug = count_plug+1;
+            }       
+            
         </script>
     </head>
     <body>
         <center>
 
-        <button onclick="digitalWrite(1, 'LOW');">LED 1 ON</button>
-        <button onclick="digitalWrite(1, 'HIGH');">LED 1 OFF</button>  <br><br>        
+        <input type="button" style="height:40px; width:100px;" id="led1" value = "LED 1"  onclick="led1('led1');"/><br><br>
         
-        <button onclick="digitalWrite(2, 'LOW');">LED 2 ON</button>
-        <button onclick="digitalWrite(2, 'HIGH');">LED 2 OFF</button>  <br><br> 
+        <input type="button" style="height:40px; width:100px" id="led2" value = "LED 2"  onclick="led2('led2');"/><br><br>
         
-        <button onclick="digitalWrite(3, 'LOW');">FAN ON</button>
-        <button onclick="digitalWrite(3, 'HIGH');">FAN OFF</button>  <br><br>        
+        <input type="button" style="height:40px; width:100px" id="fan" value = "FAN"  onclick="fan('fan');"/><br><br>
         
-        <button onclick="digitalWrite(4, 'LOW');">PLUG ON</button>
-        <button onclick="digitalWrite(4, 'HIGH');">PLUG OFF</button>  <br><br>
-        
+        <input type="button" style="height:40px; width:100px" id="plug" value = "PLUG"  onclick="plug('plug');"/><br><br>
+
         </center>
     </body>
 </html>
