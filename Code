@@ -15,11 +15,11 @@
             function led1(btn){
                 var property = document.getElementById(btn);
                 if (count_led1%2 == 0){
-                    digitalWrite(1,"HIGH");
+                    digitalWrite(1,"LOW");
                     property.style.backgroundColor = "#008000"
                 }
                 else{
-                    digitalWrite(1,"LOW");
+                    digitalWrite(1,"HIGH");
                     property.style.backgroundColor = "#FF0000"
                 }
                 count_led1 = count_led1+1;
@@ -27,11 +27,11 @@
             function led2(btn){
                 var property = document.getElementById(btn);
                 if (count_led2%2 == 0){
-                    digitalWrite(2,"HIGH");
+                    digitalWrite(2,"LOW");
                     property.style.backgroundColor = "#008000"
                 }
                 else{
-                    digitalWrite(2,"LOW");
+                    digitalWrite(2,"HIGH");
                     property.style.backgroundColor = "#FF0000"
                 }
                 count_led2 = count_led2+1;
@@ -39,11 +39,11 @@
             function fan(btn){
                 var property = document.getElementById(btn);
                 if (count_fan%2 == 0){
-                    digitalWrite(3,"HIGH");
+                    digitalWrite(3,"LOW");
                     property.style.backgroundColor = "#008000"
                 }
                 else{
-                    digitalWrite(3,"LOW");
+                    digitalWrite(3,"HIGH");
                     property.style.backgroundColor = "#FF0000"
                 }
                 count_fan = count_fan+1;
@@ -51,16 +51,15 @@
             function plug(btn){
                 var property = document.getElementById(btn);
                 if (count_plug%2 == 0){
-                    digitalWrite(4,"HIGH");
+                    digitalWrite(4,"LOW");
                     property.style.backgroundColor = "#008000"
                 }
                 else{
-                    digitalWrite(4,"LOW");
+                    digitalWrite(4,"HIGH");
                     property.style.backgroundColor = "#FF0000"
                 }
                 count_plug = count_plug+1;
-            }       
-            
+            }                   
         </script>
     </head>
     <body>
